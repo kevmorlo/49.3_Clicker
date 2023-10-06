@@ -1,5 +1,5 @@
 <?php
-require './modeles/base.html' // Inclus le modèle base.html
+require './templates/base.html' // Inclus le modèle base.html
 ?>
 <body>
     <a href=""></a>
