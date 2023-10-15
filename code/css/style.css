@@ -52,9 +52,9 @@ body {
     background-color: rgba(217, 217, 217, 0.60);
 }
 
-.Banniere {
+.Banniere_img {
     margin-left: 30px;
-    height: 100%;
+    width: 30%;
 }
 
 .Navbar_boutons {
@@ -62,7 +62,6 @@ body {
     padding: 16px;
     display: flex;
     justify-content: flex-end;
-    align-items: flex-start;
 }
 
 .Navbar_bouton {
@@ -70,19 +69,14 @@ body {
     padding: 16px;
     align-items: center;
     border: none;
-    cursor: pointer;
+    text-decoration: none;
+    color: #000000;
+}
+
+.Navbar_liste {
+    list-style: none;
 }
 
 .Navbar_bouton:hover {
     background-color: rgba(0, 0, 0, 0.04);
 }
-
-.Navbar_bouton_texte {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    color: #161616;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-}
-

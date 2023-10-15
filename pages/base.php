@@ -9,21 +9,20 @@
 </head>
 <body>
   <nav class="Navbar">
-    <a href="../../index.php"></a>
-    <img src="../media/img/49.3_clicker_banniere.png" alt="Logo de 49.3 Clicker" class="Banniere">
-    <div class="Navbar_boutons">
-      <div class="Navbar_bouton" id="Navbar_Bouton_compte">
-        <p class="Navbar_bouton_texte">Mon compte</p>
-      </div>
-      <div class="Navbar_bouton" id="Navbar_Bouton_parties">
-        <p class="Navbar_bouton_texte">Mes parties</p>
-      </div>
-      <div class="Navbar_bouton" id="Navbar_Bouton_deconnexion">
-        <p class="Navbar_bouton_texte">Se déconnecter</p>
-      </div>
-      <div class="Navbar_bouton" id="Navbar_Bouton_connexion">
-        <p class="Navbar_bouton_texte">Se connecter</p>
-      </div>
-    </div>
+    <img src="../media/img/49.3_clicker_banniere.png" alt="Logo de 49.3 Clicker" class="Banniere_img">
+    <ul class="Navbar_boutons">
+      <li class="Navbar_liste">
+        <a href="./profil.php" class="Navbar_bouton" id="Navbar_Bouton_compte">Mon compte</a>
+      </li>
+      <li class="Navbar_liste">
+        <a href="./parties.php" class="Navbar_bouton" id="Navbar_Bouton_parties">Mes parties</a>
+      </li>
+      <li class="Navbar_liste">
+       <a href="./deconnexion.php" class="Navbar_bouton" id="Navbar_Bouton_deconnexion">Se déconnecter</a>
+      </li>
+      <li class="Navbar_liste">
+        <a href="./connexion.php" class="Navbar_bouton" id="Navbar_Bouton_connexion">Se connecter</a>
+      </li>
+    </ul>
   </nav>
 </body>

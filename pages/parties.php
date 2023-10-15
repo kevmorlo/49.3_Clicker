@@ -1,3 +1,3 @@
 <?php
-require './pages/base.php'
+require './base.php'
 ?>

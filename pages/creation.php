@@ -1,3 +1,3 @@
 <?php
-include './pages/base.php'
+include './base.php'
 ?>
