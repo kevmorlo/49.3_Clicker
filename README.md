@@ -21,21 +21,50 @@ L'application prend en charge tous les supports et la plupart des résolutions.
 ### Prérequis
 
 Afin d'installer le projet correctement, vous aurez besoin : 
-- De MySQL ou MariaDB
-- De PHP
-- D'Apache
+- De [MySQL](https://www.mysql.com/fr/downloads/) ou [MariaDB](https://mariadb.org/download)
+- De [PHP](https://www.php.net/downloads)
+- D'[Apache](https://httpd.apache.org/download.cgi)
+- De [Composer](https://getcomposer.org/download)
 
 ### Installation
 
-1. Importez le projet,
-2. Dans un premier temps importez la base de données `49.3_clicker.sql` dans votre base de données MySQL ou MariaDB, 
-3. Ensuite lancez vos services MySQL/MariaDB, PHP et Apache (ouvrez votre WAMP/MAMP ou lancez vos services LAMP),
-4. Dans votre navigateur, rendez-vous sur la route menant à votre projet, 
-5. Félicitations, vous pouvez maintenant jouer à 49.3 Clicker !
+1. Importez le projet.
+2. Dans votre terminal allez à l'emplacement du projet, par exemple: 
+ 
+```bash
+cd ./Documents/49.3_Clicker
+```
 
-## License
+3. Importez le projet [Dotenv](https://github.com/vlucas/phpdotenv) créé par Vance Lucas et Graham Campbell avec cette commande : 
 
-Cette œuvre est mise à disposition selon les termes de la
+```bash
+composer require vlucas/phpdotenv
+```
+
+4. Importez la base de données `49.3_clicker.sql` dans votre base de données MySQL ou MariaDB, 
+5. Lancez vos services MySQL/MariaDB, PHP et Apache (ouvrez votre WAMP/MAMP ou lancez vos services LAMP),
+6.  Dans votre navigateur, rendez-vous sur la route menant à votre projet, 
+7.  Félicitations, vous pouvez maintenant jouer à 49.3 Clicker !
+
+## License et citations
+
+Ce projet utilise le projet [Dotenv](https://github.com/vlucas/phpdotenv) créé par Vance Lucas et Graham Campbell :
+```
+Copyright (c) 2014, Graham Campbell.
+Copyright (c) 2013, Vance Lucas.
+All rights reserved.
+```
+
+Il utilise aussi le design system officiel de l'Etat Français, mis en ligne par le SIG (Système d'information du gouvernement).
+
+Aussi ce projet utilise les icônes mises en lignes par Microsoft sous la licence MIT : 
+```
+Copyright (c) 2020 Microsoft Corporation
+```
+
+ainsi que celles de Material de Google.
+
+Enfin, cette œuvre est mise à disposition selon les termes de la
 [Licence Creative Commons Attribution - Partage dans les Mêmes Conditions 4.0 International](http://creativecommons.org/licenses/by-sa/4.0/).
 
 [![Licence Creative Commons](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/)
