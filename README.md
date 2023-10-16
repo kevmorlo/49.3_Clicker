@@ -41,10 +41,12 @@ cd ./Documents/49.3_Clicker
 composer require vlucas/phpdotenv
 ```
 
-4. Importez la base de données `49.3_clicker.sql` dans votre base de données MySQL ou MariaDB, 
-5. Lancez vos services MySQL/MariaDB, PHP et Apache (ouvrez votre WAMP/MAMP ou lancez vos services LAMP),
-6.  Dans votre navigateur, rendez-vous sur la route menant à votre projet, 
-7.  Félicitations, vous pouvez maintenant jouer à 49.3 Clicker !
+4. Copiez le fichier `.env.example` et nommez le `.env`.
+5. Dans le fichier .env remplacez les identifiants par défaut par les vôtres,
+6. Importez la base de données `49.3_clicker.sql` dans votre base de données MySQL ou MariaDB, 
+7. Lancez vos services MySQL/MariaDB, PHP et Apache (ouvrez votre WAMP/MAMP ou lancez vos services LAMP),
+8.  Dans votre navigateur, rendez-vous sur la route menant à votre projet, 
+9.  Félicitations, vous pouvez maintenant jouer à 49.3 Clicker !
 
 ## License et citations
 
@@ -57,7 +59,7 @@ All rights reserved.
 
 Il utilise aussi le design system officiel de l'Etat Français, mis en ligne par le SIG (Système d'information du gouvernement).
 
-Aussi ce projet utilise les icônes mises en lignes par Microsoft sous la licence MIT : 
+Aussi ce projet utilise les icônes mises en ligne par Microsoft sous la licence MIT 
 ```
 Copyright (c) 2020 Microsoft Corporation
 ```

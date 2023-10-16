@@ -1,6 +1,7 @@
 <?php
 // initialisation
-require '../code/php/conn_bdd.php';
+session_start();
+require '../conn_bdd.php';
 ?>
 
 <!-- Affichage -->
@@ -19,7 +20,7 @@ require '../code/php/conn_bdd.php';
   <nav class="Navbar">
     <img src="../media/img/49.3_clicker_banniere.png" alt="Logo de 49.3 Clicker" class="Banniere_img">
     <ul class="Navbar_boutons">
-      <?php if($_SESSION['utilisateur_est_connecte']) { // Si l'utilisateur est connecté, on affiche ces boutons ?>
+      <?php // if($_SESSION['utilisateur_est_connecte']) { // Si l'utilisateur est connecté, on affiche ces boutons ?>
       <li class="Navbar_liste">
         <a href="./profil.php" class="Navbar_bouton" id="Navbar_Bouton_compte">Mon compte</a>
       </li>
@@ -29,11 +30,11 @@ require '../code/php/conn_bdd.php';
       <li class="Navbar_liste">
        <a href="./deconnexion.php" class="Navbar_bouton" id="Navbar_Bouton_deconnexion">Se déconnecter</a>
       </li>
-      <?php } else { // Sinon on affiche le bouton de connexion ?>
+      <?php //} else { // Sinon on affiche le bouton de connexion ?>
       <li class="Navbar_liste">
         <a href="./connexion.php" class="Navbar_bouton" id="Navbar_Bouton_connexion">Se connecter</a>
       </li>
-      <?php } ?>
+      <?php //} ?>
     </ul>
   </nav>
 </body>
