@@ -12,7 +12,7 @@ Ce clicker est un projet d'école de clicker humoristique faisant la satire de n
 
 - MySQL
 
-## Responsive ?
+## Responsivité
 
 L'application prend en charge tous les supports et la plupart des résolutions.
 
@@ -50,6 +50,8 @@ composer require vlucas/phpdotenv
 
 ## License et citations
 
+### Citations
+
 Ce projet utilise le projet [Dotenv](https://github.com/vlucas/phpdotenv) créé par Vance Lucas et Graham Campbell :
 ```
 Copyright (c) 2014, Graham Campbell.
@@ -66,7 +68,9 @@ Copyright (c) 2020 Microsoft Corporation
 
 ainsi que celles de Material de Google.
 
-Enfin, cette œuvre est mise à disposition selon les termes de la
+### License
+
+Cette œuvre est mise à disposition selon les termes de la
 [Licence Creative Commons Attribution - Partage dans les Mêmes Conditions 4.0 International](http://creativecommons.org/licenses/by-sa/4.0/).
 
 [![Licence Creative Commons](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/)

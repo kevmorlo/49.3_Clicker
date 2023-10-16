@@ -1,7 +1,16 @@
 <?php
 // initialisation
-session_start();
 require '../conn_bdd.php';
+
+// Si aucune session n'est lancée, on en crée une
+if (session_status() == PHP_SESSION_NONE) {
+  session_start();
+}
+
+// Génère un jeton CSRF pour éviter les attaques CSRF et sécuriser les formulaires
+if (!isset($jeton_csrf)) {
+  $jeton_csrf = bin2hex(random_bytes(32));
+}
 ?>
 
 <!-- Affichage -->
@@ -17,10 +26,11 @@ require '../conn_bdd.php';
 </head>
 <body>
   <input type="hidden" class="utilisateur_est_connecte" value="<?= $_SESSION['utilisateur_est_connecte'] ?>">
+  <input type="hidden" class="jeton_csrf" value="<?= $jeton_csrf ?>">
   <nav class="Navbar">
     <img src="../media/img/49.3_clicker_banniere.png" alt="Logo de 49.3 Clicker" class="Banniere_img">
     <ul class="Navbar_boutons">
-      <?php // if($_SESSION['utilisateur_est_connecte']) { // Si l'utilisateur est connecté, on affiche ces boutons ?>
+      <?php  if($_SESSION['utilisateur_est_connecte']) { // Si l'utilisateur est connecté, on affiche ces boutons ?>
       <li class="Navbar_liste">
         <a href="./profil.php" class="Navbar_bouton" id="Navbar_Bouton_compte">Mon compte</a>
       </li>
@@ -30,11 +40,11 @@ require '../conn_bdd.php';
       <li class="Navbar_liste">
        <a href="./deconnexion.php" class="Navbar_bouton" id="Navbar_Bouton_deconnexion">Se déconnecter</a>
       </li>
-      <?php //} else { // Sinon on affiche le bouton de connexion ?>
+      <?php } else { // Sinon on affiche le bouton de connexion ?>
       <li class="Navbar_liste">
         <a href="./connexion.php" class="Navbar_bouton" id="Navbar_Bouton_connexion">Se connecter</a>
       </li>
-      <?php //} ?>
+      <?php } ?>
     </ul>
   </nav>
 </body>

@@ -19,14 +19,14 @@
 @font-face {
     font-family: 'Marianne';
     font-weight: 700;
-    src: url('../../fonts/Marianne/Marianne/fontes\ web/Marianne_Bold.woff2');
+    src: url('../../fonts/Marianne/Marianne/fontes\ web/Marianne-Bold.woff2');
 }
 
 @font-face {
     font-family: 'Marianne';
     font-weight: 400;
     font-style: italic;
-    src: url('../../fonts/Marianne/Marianne/fontes\ web/Marianne-Italic.woff2');
+    src: url('../../fonts/Marianne/Marianne/fontes\ web/Marianne-Regular_Italic.woff2');
 }
 
 @font-face {
@@ -39,6 +39,7 @@
 body {
     margin: 0px;
     font-family: 'Marianne', sans-serif;
+    background: url('../../media/img/fond_ecran.png');
 }
 
 /* Intégration de la navbar */
@@ -79,4 +80,83 @@ body {
 
 .Navbar_bouton:hover {
     background-color: rgba(0, 0, 0, 0.04);
+}
+
+/* Intégration du formulaire */
+
+.Formulaire {
+    display: flex;
+    margin-top: 40px;
+    margin-left: 25%;
+    margin-right: 25%;
+    padding: 25px 41px;
+    padding-bottom: 30px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.90);
+    box-shadow: 0px 6px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.Formulaire_h1 {
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Marianne';
+}
+
+.Champ_de_saisie {
+    display: flex;
+    width: 54%;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.Champ_de_saisie_titre {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    align-self: stretch;
+}
+
+.Champ_de_saisie_input {
+    display: flex;
+    padding: 8px 16px;
+    align-items: center;
+    gap: 6px;
+    align-self: stretch;
+    border: none;
+    border-radius: 4px 4px 0px 0px;
+    border-bottom: 2px solid #3A3A3A;
+    background-color: #EEE;
+}
+
+.Valider {
+    margin: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.Valider_bouton {
+    padding: 10px 24px;
+    font-family: 'Marianne';
+    font-size: 18px;
+    color:  #F5F5FE;
+    text-align: center;
+    background-color: #000091;
+    border: none;
+    cursor: pointer;
+    transition: background-color 300ms;
+}
+
+.Valider_bouton:hover {
+    background-color: #1212FF;
 }
