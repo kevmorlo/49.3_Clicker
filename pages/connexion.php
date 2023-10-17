@@ -38,7 +38,7 @@ if (!empty($_POST)) {
 
 <!-- Partie Affichage -->
 <body>
-    <form action="./parties.php" method="post" class="Formulaire">
+    <form action="" method="post" class="Formulaire">
         <h1 class="Formulaire_h1">Se connecter</h1>
         <div class="Champ_de_saisie" id="Cds_utilisateur">
             <p class="Champ_de_saisie_titre">Nom d'utilisateur</p>

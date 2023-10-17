@@ -18,6 +18,12 @@
 
 @font-face {
     font-family: 'Marianne';
+    font-weight: 500;
+    src: url('../../fonts/Marianne/Marianne/fontes\ web/Marianne-Medium.woff2');
+}
+
+@font-face {
+    font-family: 'Marianne';
     font-weight: 700;
     src: url('../../fonts/Marianne/Marianne/fontes\ web/Marianne-Bold.woff2');
 }
@@ -34,6 +40,10 @@
     font-weight: 700;
     font-style: italic;
     src: url('../../fonts/Marianne/Marianne/fontes\ web/Marianne-Bold_Italic.woff2');
+}
+
+* {
+    box-sizing: border-box;
 }
 
 body {
@@ -72,6 +82,7 @@ body {
     border: none;
     text-decoration: none;
     color: #000000;
+    transition: background-color 300ms;
 }
 
 .Navbar_liste {
@@ -86,7 +97,7 @@ body {
 
 .Formulaire {
     display: flex;
-    margin-top: 40px;
+    margin-top: 30px;
     margin-left: 25%;
     margin-right: 25%;
     padding: 25px 41px;
@@ -107,6 +118,7 @@ body {
     justify-content: center;
     text-align: center;
     font-family: 'Marianne';
+    font-weight: 500;
 }
 
 .Champ_de_saisie {
@@ -159,4 +171,18 @@ body {
 
 .Valider_bouton:hover {
     background-color: #1212FF;
+}
+
+.Formulaire_a {
+    text-decoration: none;
+    color: #000091;
+    transition: color 300ms;
+}
+
+.Formulaire_a:visited {
+    color: #000091;
+}
+
+.Formulaire_a:hover {
+    color: #1212FF;
 }
