@@ -7,6 +7,11 @@ if (session_status() == PHP_SESSION_NONE) {
   session_start();
 }
 
+// Si l'utilisateur n'est pas connecté, on l'enregistre dans la session
+if(!isset($_SESSION['utilisateur_est_connecte'])) {
+  $_SESSION['utilisateur_est_connecte'] = "false";
+}
+
 // Génère un jeton CSRF pour éviter les attaques CSRF et sécuriser les formulaires
 if (!isset($jeton_csrf)) {
   $jeton_csrf = bin2hex(random_bytes(32));
@@ -30,7 +35,8 @@ if (!isset($jeton_csrf)) {
   <nav class="Navbar">
     <img src="../media/img/49.3_clicker_banniere.png" alt="Logo de 49.3 Clicker" class="Banniere_img">
     <ul class="Navbar_boutons">
-      <?php  if($_SESSION['utilisateur_est_connecte']) { // Si l'utilisateur est connecté, on affiche ces boutons ?>
+      <!-- Si l'utilisateur est connecté, on affiche ces boutons -->
+      <?php  if($_SESSION['utilisateur_est_connecte'] == "true") { ?>
       <li class="Navbar_liste">
         <a href="./profil.php" class="Navbar_bouton" id="Navbar_Bouton_compte">Mon compte</a>
       </li>
@@ -40,7 +46,8 @@ if (!isset($jeton_csrf)) {
       <li class="Navbar_liste">
        <a href="./deconnexion.php" class="Navbar_bouton" id="Navbar_Bouton_deconnexion">Se déconnecter</a>
       </li>
-      <?php } else { // Sinon on affiche le bouton de connexion ?>
+      <!-- Sinon on affiche le bouton de connexion -->
+      <?php } else { ?>
       <li class="Navbar_liste">
         <a href="./connexion.php" class="Navbar_bouton" id="Navbar_Bouton_connexion">Se connecter</a>
       </li>

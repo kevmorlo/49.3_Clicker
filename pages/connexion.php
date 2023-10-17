@@ -24,6 +24,7 @@ if (!empty($_POST)) {
                 // On enregistre le nom d'utilisateur dans une session et on redirige vers "mes parties"
                 $_SESSION = array();
                 $_SESSION['nom'] = $nom;
+                $_SESSION['utilisateur_est_connecte'] = "true";
                 header('Location: ./parties.php');
             }
         } else {
