@@ -1,29 +1,29 @@
 <?php
 // On inclue les dépendances
-include './base.php';
+require './base.php';
 
 // Traitement du formulaire
 if (!empty($_POST)) {
     // Vérifie que l'utilisateur possède le bon jeton CSRF
-    if (!isset($jeton_csrf) || !isset($_POST['jeton_csrf']) || $jeton_csrf !== $_POST['jeton_csrf']) {
-        die('Erreur: Jeton CSRF invalide');
-    } else {
+    // if ($jeton_csrf !== $_POST['jeton_csrf']) {
+    //     die('Erreur: Jeton CSRF invalide');
+    // } else {
         // On récupère les infos du formulaire en hashant avec bCrypt le mot de passe
         $nom = $_POST["Utilisateur"];
         $mail = $_POST['Mail'];
-        $mdp = password_hash($_POST["Mdp"]);
-    }
+        $mdp = password_hash($_POST["Mdp"], PASSWORD_DEFAULT);
+    // }
     // Si le nom ne comporte pas de charactères spéciaux
     if (preg_match('/^[a-zA-Z0-9]*$/', $nom)) {
         // On effectue la requête SQL qui recherche le nom d'utilisateur associé au mot de passe renseignés
-        $sth = $dbh->prepare("SELECT id, nom, mdp, email FROM Utilisateurs WHERE nom = :nom AND mdp = :mdp AND email = :email");
-        $traitement = $sth->execute(['nom' => $nom, 'mdp' => $mdp, 'email' => $mail]);
+        $sth = $dbh->prepare("SELECT nom, mdp, email FROM Utilisateurs WHERE nom = :nom AND mdp = :mdp AND email = :email");
+        $traitement = $sth->execute([':nom' => $nom, ':mdp' => $mdp, ':email' => $mail]);
         if($traitement) {
-            $resultat = $sth->fetchAll();
+           $sth->fetchAll();
             // Si on n'obtien aucun résultat
-            if($resultat->rowCount() == 0) {
+            if($sth->rowCount() == 0) {
                 // On effectue la requête SQL qui vient insérer les données dans la table utilisateur
-                $sth = $dbh->prepare("INSERT INTO Utilisateurs (nom, email, mdp) VALUES(:nom, :email, :mdp);");
+                $sth = $dbh->prepare("INSERT INTO Utilisateurs (nom, email, mdp) VALUES(nom, email, mdp);");
                 $traitement = $sth->execute(['nom' => $nom, 'email => $mail', 'mdp' => $mdp]);
                 if(!$traitement) {
                     print_r($sth->errorInfo());

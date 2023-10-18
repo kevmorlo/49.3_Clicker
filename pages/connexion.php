@@ -5,13 +5,13 @@ require './base.php';
 // Traitement du formulaire
 if (!empty($_POST)) {
     // Vérifie que l'utilisateur possède le bon jeton CSRF
-    if (!isset($jeton_csrf) || !isset($_POST['jeton_csrf']) || $jeton_csrf !== $_POST['jeton_csrf']) {
-        die('Erreur: Jeton CSRF invalide');
-    } else {
+    // if ($jeton_csrf !== $_POST['jeton_csrf']) {
+    //     die('Erreur: Jeton CSRF invalide');
+    // } else {
         // On récupère les infos du formulaire en hashant avec bCrypt le mot de passe
         $nom = $_POST["Utilisateur"];
-        $mdp = password_hash($_POST["Mdp"]);
-    }
+        $mdp = password_hash($_POST["Mdp"], PASSWORD_DEFAULT);
+    // }
     // Si le nom ne comporte pas de charactères spéciaux
     if (preg_match('/^[a-zA-Z0-9]*$/', $nom)) {
         // On effectue la requête SQL qui recherche le nom d'utilisateur associé au mot de passe renseignés
@@ -39,6 +39,7 @@ if (!empty($_POST)) {
 <!-- Partie Affichage -->
 <body>
     <form action="" method="post" class="Formulaire">
+        <input type="hidden" name="jeton_csrf" value="<?= $jeton_csrf ?>">
         <h1 class="Formulaire_h1">Se connecter</h1>
         <div class="Champ_de_saisie" id="Cds_utilisateur">
             <p class="Champ_de_saisie_titre">Nom d'utilisateur</p>

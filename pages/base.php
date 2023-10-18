@@ -28,10 +28,10 @@ if (!isset($jeton_csrf)) {
   <title>49.3 Clicker</title>
   <link rel="shortcut icon" href="../media/img/49.3.png" type="image/x-icon">
   <link rel="stylesheet" href="../code/css/style.css">
+  <script src="../code/js/script.js"></script>
 </head>
 <body>
-  <input type="hidden" class="utilisateur_est_connecte" value="<?= $_SESSION['utilisateur_est_connecte'] ?>">
-  <input type="hidden" class="jeton_csrf" value="<?= $jeton_csrf ?>">
+  <input type="hidden" id="utilisateur_est_connecte" value="<?= $_SESSION['utilisateur_est_connecte'] ?>">
   <nav class="Navbar">
     <img src="../media/img/49.3_clicker_banniere.png" alt="Logo de 49.3 Clicker" class="Banniere_img">
     <ul class="Navbar_boutons">

@@ -93,6 +93,16 @@ body {
     background-color: rgba(0, 0, 0, 0.04);
 }
 
+@media screen and (max-width: 700px){
+    .Navbar_boutons {
+        margin-right: 0px;
+    }
+    
+    .Navbar_bouton {
+        font-size: 12px;
+    }
+}
+
 /* Intégration du formulaire */
 
 .Formulaire {
@@ -185,4 +195,183 @@ body {
 
 .Formulaire_a:hover {
     color: #1212FF;
+}
+
+.Conteneur {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#Formulaire_parties {
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.Formulaire_supprimer {
+    border: none;
+    background-color: unset;
+}
+
+@media screen and (max-width: 700px) {
+    .Formulaire {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+    
+    .Formulaire_h1 {
+        font-size: 20px;
+    }
+
+    .Formulaire_a {
+        font-size: 12px;
+    }
+
+    .Champ_de_saisie {
+        width: 100%;
+    }
+
+    .Champ_de_saisie_titre {
+        font-size: 12px;
+    }
+
+    .Valider_bouton {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .Conteneur {
+        flex-direction: column;
+    }
+}
+
+/* Intégration du clicker */
+
+.Bonus_actifs {
+    width: 5%;
+}
+
+.Bonus_conteneur {
+    margin: 10px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+}
+
+.Compteur {
+    font-family: 'Marianne';
+    font-size: 20px;
+}
+
+.Clicker_conteneur {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.Clicker_bouton {
+    margin: 5%;
+    margin-right: 0px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: none;
+    background-color: unset;
+    cursor: pointer;
+    transition: width, height 400;
+}
+
+.Clicker_bouton.clique {
+    width: 45%;
+    height: 90%;
+}
+
+.Clicker_img {
+    width: 80%;
+}
+
+/* Intégration de la boutique */
+
+.Boutique {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    background-color: rgba(22, 22, 22, 0.78);
+    backdrop-filter: blur(6px);
+}
+
+.Boutique_titre {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.Boutique_titre_texte {
+    font-size: 32px;
+    color: white;
+}
+
+.Boutique_bonus {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.Bonus_titre {
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.Bonus_bouton {
+    display: flex;
+    padding: 2px 6px 2px 2px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    color: #000091;
+    background-color: #8585F6;
+    border: none;
+    font-family: 'Marianne';
+    cursor: pointer;
+}
+
+.Page_conteneur {
+    display: flex;
+}
+
+.Bonus_boutons_conteneur {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.Bonus_bouton_img {
+    width: 20px;
+    height: 20px;
+}
+
+@media screen and (max-width: 800px) {
+    .Boutique {
+        background-color: unset;
+    }
+
+    .Boutique_titre {
+        gap: 1px;
+    }
+
+    .Boutique_titre_texte {
+        color: black;
+        font-size: 20px;
+    }
+
+    .Bonus_titre {
+        color: black;
+        font-size: 16px;
+    }
 }

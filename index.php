@@ -1,5 +1,5 @@
 <?php
-include './pages/base.php'; // Inclus le modèle base.html
+require './pages/base.php'; // Inclus le modèle base.html
 ?>
 <body>
     <a href=""></a>
