@@ -35,6 +35,7 @@ class Bonus {
         balise.textContent = this.autoclickers;
     }
 
+    // Lors d'un clic, on effectue une animation et on incrémente les 49.3
     clic() {
         let clickerBouton = document.querySelector('.Clicker_bouton');
         clickerBouton.addEventListener('click', () => {
@@ -42,8 +43,34 @@ class Bonus {
             setTimeout(() => {
                 clickerBouton.classList.remove('clique');
             }, 700);
-            this.clics = this.clics + 1 + this.raclement * this.multiplicateurs;
+            this.clics = this.clics + 1 + this.raclement * this.multiplicateurs * this.perlinpinpin * this.notreProjet;
             this.afficher49_3();
         });
+    }
+
+    achat(montant) {
+        if(montant > this.clics) {
+            console.log("Vous n'avez pas assez \"engagé la responsabilité de votre gouvernement\" pour acheter cela")
+        } else {
+            this.clics -= montant;
+        }
+    }
+
+    achatMultiplicateur() {
+        let montant = 50 * this.multiplicateurs;
+        let operation = this.achat(montant);
+        if(operation) {
+            this.multiplicateurs += 1;
+            console.log("Vous doublez votre nombre de clics, mme Borne serait très heureuse de posséder un tel bonus !")
+        }
+    }
+
+    achatAutoclicker() {
+        let montant = 200 * this.autoclickers;
+        let operation = this.achat(montant);
+        if(operation) {
+            this.autoclickers += 1;
+            console.log("Vous générez +1 clic par seconde, j'en connais qui seraient ravis que les 49.3 se génèrent tout seuls !")
+        }
     }
 }

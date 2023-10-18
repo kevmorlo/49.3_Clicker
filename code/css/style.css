@@ -341,6 +341,10 @@ body {
     cursor: pointer;
 }
 
+.Bonus_bouton:hover {
+    background-color: #B1B1F9;
+}
+
 .Page_conteneur {
     display: flex;
 }
