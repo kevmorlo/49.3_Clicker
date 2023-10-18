@@ -15,12 +15,12 @@ if (!empty($_POST)) {
     // Si le nom ne comporte pas de charactères spéciaux
     if (preg_match('/^[a-zA-Z0-9]*$/', $nom)) {
         // On effectue la requête SQL qui recherche le nom d'utilisateur associé au mot de passe renseignés
-        $sth = $dbh->prepare("SELECT id, nom, mdp FROM Utilisateurs WHERE nom = :nom AND mdp = :mdp");
+        $sth = $dbh->prepare("SELECT nom, mdp FROM Utilisateurs WHERE nom = :nom AND mdp = :mdp");
         $traitement = $sth->execute(['nom' => $nom, 'mdp' => $mdp]);
         if($traitement){
-            $resultat = $sth->fetchAll();
+            $sth->fetchAll();
             // Si on obtien un résultat
-            if($resultat->rowCount() == 1) {
+            if($sth->rowCount() == 1) {
                 // On enregistre le nom d'utilisateur dans une session et on redirige vers "mes parties"
                 $_SESSION = array();
                 $_SESSION['nom'] = $nom;

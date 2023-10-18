@@ -35,23 +35,15 @@ class Bonus {
         balise.textContent = this.autoclickers;
     }
 
-    incrementer49_3() {
-        let clickerBouton = document.querySelector('.Clicker_bouton');
-        clickerBouton.addEventListener('click', () => {
-            this.clics = this.clics + 1 + this.raclement * this.multiplicateurs;
-        })
-    }
-}
-
-class Animations {
-    // On anime notre clicker lorsqu'on clique dessus
-    animerClic() {
+    clic() {
         let clickerBouton = document.querySelector('.Clicker_bouton');
         clickerBouton.addEventListener('click', () => {
             clickerBouton.classList.add('clique');
             setTimeout(() => {
                 clickerBouton.classList.remove('clique');
             }, 700);
+            this.clics = this.clics + 1 + this.raclement * this.multiplicateurs;
+            this.afficher49_3();
         });
     }
 }

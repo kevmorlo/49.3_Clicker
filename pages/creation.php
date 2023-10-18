@@ -23,8 +23,8 @@ if (!empty($_POST)) {
             // Si on n'obtien aucun résultat
             if($sth->rowCount() == 0) {
                 // On effectue la requête SQL qui vient insérer les données dans la table utilisateur
-                $sth = $dbh->prepare("INSERT INTO Utilisateurs (nom, email, mdp) VALUES(nom, email, mdp);");
-                $traitement = $sth->execute(['nom' => $nom, 'email => $mail', 'mdp' => $mdp]);
+                $sth = $dbh->prepare("INSERT INTO Utilisateurs (nom, email, mdp) VALUES(:nom, :email, :mdp);");
+                $traitement = $sth->execute([':nom' => $nom, ':email' => $mail, ':mdp' => $mdp]);
                 if(!$traitement) {
                     print_r($sth->errorInfo());
                 } else {

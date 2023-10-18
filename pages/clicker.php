@@ -8,18 +8,11 @@ include './base.php';
       <div class="Bonus_conteneur" title="Multiplicateurs actifs">
         <img src="../../media/img/2x.svg" alt="Multiplicateurs actifs" class="Bonus_actifs_icone">
         <p class="Compteur" id="Compteur_multi">
-          <script>
-            let bonus = new Bonus();
-            bonus.afficherMultiplicateurs();
-          </script>
         </p>
       </div>
       <div class="Bonus_conteneur" title="Autoclickers actifs">
         <img src="../../media/img/parametres.svg" alt="Autoclickers actifs" class="Bonus_actifs_icone">
         <p class="Compteur" id="Compteur_autoclic">
-          <script>
-            bonus.afficherAutoclickers();
-          </script>
         </p>
       </div>
     </div>
@@ -27,11 +20,6 @@ include './base.php';
       <button class="Clicker_bouton">
         <img src="../../media/img/49.3.png" alt="Cliquez ici" class="Clicker_img">
         <p class="Compteur" id="Compteur_clicker">
-          <script>
-            bonus.afficher49_3();
-            const animations = new Animations();
-            animations.animerClic();
-          </script>
         </p>
       </button>
       <div class="Boutique">
@@ -75,3 +63,10 @@ include './base.php';
     </div>
   </div>
 </body>
+<script>
+  let bonus = new Bonus();
+  bonus.clic();
+  bonus.afficherMultiplicateurs();
+  bonus.afficherAutoclickers();
+  bonus.afficher49_3();
+</script>
