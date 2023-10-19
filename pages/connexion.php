@@ -10,22 +10,27 @@ if (!empty($_POST)) {
     // } else {
         // On récupère les infos du formulaire en hashant avec bCrypt le mot de passe
         $nom = $_POST["Utilisateur"];
-        $mdp = password_hash($_POST["Mdp"], PASSWORD_DEFAULT);
+        $mdp = $_POST["Mdp"];
     // }
     // Si le nom ne comporte pas de charactères spéciaux
     if (preg_match('/^[a-zA-Z0-9]*$/', $nom)) {
-        // On effectue la requête SQL qui recherche le nom d'utilisateur associé au mot de passe renseignés
-        $sth = $dbh->prepare("SELECT nom, mdp FROM Utilisateurs WHERE nom = :nom AND mdp = :mdp");
-        $traitement = $sth->execute([':nom' => $nom, ':mdp' => $mdp]);
+        // On effectue la requête SQL qui recherche le nom d'utilisateur renseigné
+        $sth = $dbh->prepare("SELECT nom, mdp FROM Utilisateurs WHERE nom = :nom");
+        $traitement = $sth->execute([':nom' => $nom]);
         if($traitement){
-            $sth->fetchAll();
+            $resultat = $sth->fetchAll();
             // Si on obtien un résultat
-            if($sth->rowCount() == 1) {
-                // On enregistre le nom d'utilisateur dans une session et on redirige vers "mes parties"
-                $_SESSION = array();
-                $_SESSION['nom'] = $nom;
-                $_SESSION['utilisateur_est_connecte'] = "true";
-                header('Location: ./parties.php?message=succes');
+            if ($sth->rowCount() == 1) {
+                $hash = $resultat[0]["mdp"];
+                if (password_verify($mdp, $hash)) {
+                    // On enregistre le nom d'utilisateur dans une session et on redirige vers "mes parties"
+                    $_SESSION = array();
+                    $_SESSION['nom'] = $nom;
+                    $_SESSION['utilisateur_est_connecte'] = "true";
+                    header('Location: ./parties.php?message=succes');
+                } else {
+                    header('Location: ./connexion.php?message=utilisateurIncorrect');
+                }
             } else {
                 header('Location: ./connexion.php?message=utilisateurIncorrect');
             }

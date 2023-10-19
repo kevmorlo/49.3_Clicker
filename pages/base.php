@@ -55,3 +55,7 @@ if (!isset($jeton_csrf)) {
     </ul>
   </nav>
 </body>
+<script>
+  new Redirections;
+  Redirections.redirection();
+</script>

@@ -75,4 +75,25 @@ include './base.php';
   multiplicateur.onclick = () => {
     bonus.achatMultiplicateur();
   }
+
+  const autoclicker = document.querySelector("#Bouton_autoclicker");
+  autoclicker.onclick = () => {
+    bonus.achatAutoclicker();
+  }
+  
+  const raclement = document.querySelector("#Bouton_raclement");
+  raclement.onclick = () => {
+    bonus.achatRaclement();
+  }
+
+  const perlinpinpin = document.querySelector("#Bouton_perlinpinpin");
+  perlinpinpin.onclick = () => {
+    bonus.achatPerlinpinpin();
+  }
+
+  const notreProjet = document.querySelector("#Bouton_notre_projet");
+  notreProjet.onclick = () => {
+    bonus.achatNotreProjet();
+  }
+
 </script> 

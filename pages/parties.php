@@ -1,5 +1,10 @@
 <?php
+// On initialise les dépendances
 require './base.php';
+
+$nom = $_SESSION['nom'];
+$sth = $dbh->prepare("SELECT u.nom, p.score, p.multiplicateurs, p.autoclickers FROM `parties` p JOIN parties_utilisateur p_u ON p.id = p_u.parties_id JOIN utilisateurs u ON p_u.utilisateurs_id = u.id WHERE u.nom = :nom;");
+$sth->execute([':nom' => $nom]);
 ?>
 
 <body>

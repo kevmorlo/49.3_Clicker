@@ -2,6 +2,14 @@
 
 Ce clicker est un projet d'école de clicker humoristique faisant la satire de notre cher gouvernement.
 
+## Maquette
+
+Voici la maquette de l'application
+
+![clicker.php : ](media/img/clicker.svg)
+
+![index.php : ](media/img/index.svg)
+
 ## Langages utilisés
 
 - PHP
