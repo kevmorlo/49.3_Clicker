@@ -26,12 +26,12 @@ if (!empty($_POST)) {
                 $sth = $dbh->prepare("INSERT INTO Utilisateurs (nom, email, mdp) VALUES(:nom, :email, :mdp);");
                 $traitement = $sth->execute([':nom' => $nom, ':email' => $mail, ':mdp' => $mdp]);
                 if(!$traitement) {
-                    print_r($sth->errorInfo());
+                    header('Location: ./connexion.php?message=erreur');
                 } else {
-                    header('Location: ./connexion.php');
+                    header('Location: ./connexion.php?message=succes');
                 }
             } else {
-                header('Location: ./connexion.php');
+                header('Location: ./connexion.php?message=utilisateurExisteDeja');
             }
         } else {
             // En cas d'erreur on affiche les détails du plantage

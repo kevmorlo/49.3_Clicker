@@ -16,7 +16,7 @@ if (!empty($_POST)) {
     if (preg_match('/^[a-zA-Z0-9]*$/', $nom)) {
         // On effectue la requête SQL qui recherche le nom d'utilisateur associé au mot de passe renseignés
         $sth = $dbh->prepare("SELECT nom, mdp FROM Utilisateurs WHERE nom = :nom AND mdp = :mdp");
-        $traitement = $sth->execute(['nom' => $nom, 'mdp' => $mdp]);
+        $traitement = $sth->execute([':nom' => $nom, ':mdp' => $mdp]);
         if($traitement){
             $sth->fetchAll();
             // Si on obtien un résultat
@@ -25,7 +25,9 @@ if (!empty($_POST)) {
                 $_SESSION = array();
                 $_SESSION['nom'] = $nom;
                 $_SESSION['utilisateur_est_connecte'] = "true";
-                header('Location: ./parties.php');
+                header('Location: ./parties.php?message=succes');
+            } else {
+                header('Location: ./connexion.php?message=utilisateurIncorrect');
             }
         } else {
             // En cas d'erreur on affiche les détails du plantage

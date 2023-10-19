@@ -31,11 +31,11 @@ include './base.php';
           <div class="Bonus_classiques">
             <p class="Bonus_titre">Bonus classiques</p>
             <div class="Bonus_boutons_conteneur">
-              <button type="button" class="Bonus_bouton">
+              <button type="button" class="Bonus_bouton" id="Bouton_multiplicateur">
                 <img src="../../media/img/2x.svg" alt="Multiplicateur" class="Bonus_bouton_img">
                 <p class="Bonus_bouton_titre">Multiplicateur</p>
               </button>
-              <button type="button" class="Bonus_bouton">
+              <button type="button" class="Bonus_bouton" id="Bouton_autoclicker">
                 <img src="../../media/img/parametres.svg" alt="Autoclicker" class="Bonus_bouton_img">
                 <p class="Bonus_bouton_titre">Autoclicker</p>
               </button>
@@ -44,17 +44,17 @@ include './base.php';
           <div class="Bonus_spécifiques">
             <p class="Bonus_titre">Bonus spécifiques</p>
             <div class="Bonus_boutons_conteneur">
-              <button type="button" class="Bonus_bouton" class="Bonus_bouton_img">
-                <img src="../../media/img/virus.svg" alt="Autoclicker">
+              <button type="button" class="Bonus_bouton" id="Bouton_raclement">
+                <img src="../../media/img/virus.svg" alt="Autoclicker" class="Bonus_bouton_img">
                 <p class="Bonus_bouton_titre">Râclement</p>
               </button>
-              <button type="button" class="Bonus_bouton">
+              <button type="button" class="Bonus_bouton" id="Bouton_perlinpinpin">
                 <img src="../../media/img/person.svg" alt="Autoclicker" class="Bonus_bouton_img">
                 <p class="Bonus_bouton_titre">Perlinpinpin</p>
               </button>
-              <button type="button" class="Bonus_bouton">
-                <img src="../../media/img/accessibilite.svg" alt="Autoclicker">
-                <p class="Bonus_bouton_titre" class="Bonus_bouton_img">Notre projet</p>
+              <button type="button" class="Bonus_bouton" id="Bouton_notre_projet">
+                <img src="../../media/img/accessibilite.svg" alt="Autoclicker" class="Bonus_bouton_img">
+                <p class="Bonus_bouton_titre">Notre projet</p>
               </button>
             </div>
           </div>
@@ -69,4 +69,10 @@ include './base.php';
   bonus.afficherMultiplicateurs();
   bonus.afficherAutoclickers();
   bonus.afficher49_3();
-</script>
+  bonus.clicAutoclicker();
+
+  const multiplicateur = document.querySelector("#Bouton_multiplicateur");
+  multiplicateur.onclick = () => {
+    bonus.achatMultiplicateur();
+  }
+</script> 
