@@ -13,7 +13,7 @@ class Bonus {
     constructor() {
         this.multiplicateurs = 1
         this.autoclickers = 0;
-        this.clics = 1000000;
+        this.clics = 0;
         this.raclement = 0;
         this.perlinpinpin = 0;
         this.notreProjet = 0;
