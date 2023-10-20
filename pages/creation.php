@@ -39,9 +39,9 @@ if (!empty($_POST)) {
         }
     }
 }
+// ----==== Partie Affichage ====----
 ?>
 
-<!-- Partie Affichage -->
 <body>
     <form action="" method="post" class="Formulaire">
         <h1 class="Formulaire_h1">Créer un compte</h1>

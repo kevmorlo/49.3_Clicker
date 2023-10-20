@@ -16,16 +16,16 @@ class ConnectionBdd {
         ];
 
         // On enregistre les identifiants dans des variables
-        $hote = $_ENV['DB_HOST'];
-        $bdd = $_ENV['DB_DATABASE'];
-        $utilisateur = $_ENV['DB_USERNAME'];
+        define('HOTE', $_ENV['DB_HOST']);
+        define('BDD', $_ENV['DB_DATABASE']);
+        define('UTILISATEUR', $_ENV['DB_USERNAME']);
         // On échappe les guillemets simples et doubles pour éviter 
         // de faire rater la requête
-        $mdp = htmlspecialchars($_ENV['DB_PASSWORD'], ENT_QUOTES, 'UTF-8'); 
-        $dsn = "mysql:host=$hote;dbname=$bdd";
+        define('MDP', htmlspecialchars($_ENV['DB_PASSWORD'], ENT_QUOTES, 'UTF-8')); 
+        $dsn = "mysql:host=".HOTE.";dbname=".BDD;
 
         try {
-            $this->dbh = new PDO($dsn, $utilisateur, $mdp, $options);
+            $this->dbh = new PDO($dsn, UTILISATEUR, MDP, $options);
         } catch (PDOException $erreur) {
             echo "Erreur de connexion : " . $erreur->getMessage();
         }
