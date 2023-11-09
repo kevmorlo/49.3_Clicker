@@ -13,9 +13,7 @@ if(!isset($_SESSION['utilisateur_est_connecte'])) {
 }
 
 // Génère un jeton CSRF pour éviter les attaques CSRF et sécuriser les formulaires
-if (!isset($jeton_csrf)) {
-  $jeton_csrf = bin2hex(random_bytes(32));
-}
+$_SESSION['jeton_csrf'] = bin2hex(random_bytes(64));
 ?>
 
 <!-- Affichage -->
@@ -56,6 +54,6 @@ if (!isset($jeton_csrf)) {
   </nav>
 </body>
 <script>
-  new Redirections;
-  Redirections.redirection();
+  let redirections = new Redirections;
+  redirections.alerte();
 </script>

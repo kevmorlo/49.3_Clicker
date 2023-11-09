@@ -218,13 +218,13 @@ class Bonus {
 class Redirections {
     constructor() {
         window.addEventListener("load", () => {
-            this.redirection();
+            this.alerte();
         })
         this.params = new URLSearchParams(window.location.search);
         this.message = this.params.get("message");
     }
 
-    redirection() {
+    alerte() {
         if (this.message === "succes") {
             alert("Opération réussie.");
         } else if (this.message === "erreur") {

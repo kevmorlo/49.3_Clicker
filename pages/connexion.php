@@ -2,10 +2,37 @@
 // On initialise les dépendances
 require './base.php';
 
+// Partie Affichage
+?>
+
+<body>
+    <form action="" method="post" class="Formulaire">
+        <input type="hidden" name="jeton_csrf" value="<?= $_SESSION['jeton_csrf'] ?>">
+        <h1 class="Formulaire_h1">Se connecter</h1>
+        <div class="Champ_de_saisie" id="Cds_utilisateur">
+            <p class="Champ_de_saisie_titre">Nom d'utilisateur</p>
+            <input type="text" name="Utilisateur" class="Champ_de_saisie_input" required>
+        </div>
+        <div class="Champ_de_saisie" id="Cds_mdp">
+            <p class="Champ_de_saisie_titre">Mot de passe</p>
+            <input type="password" name="Mdp" class="Champ_de_saisie_input" required>
+        </div>
+        <div class="Valider">
+            <input type="submit" value="Se connecter" class="Valider_bouton">
+        </div>
+        <a href="./creation.php" class="Formulaire_a">Vous n'avez pas de compte ?</a>
+    </form>
+</body>
+
+<?php
+// Partie logique
+
 // Traitement du formulaire
 if (!empty($_POST)) {
     // Vérifie que l'utilisateur possède le bon jeton CSRF
-    // if ($jeton_csrf !== $_POST['jeton_csrf']) {
+    // if ($_SESSION['jeton_csrf'] !== $_POST['jeton_csrf']) {
+    //     var_dump($_SESSION['jeton_csrf']);
+    //     var_dump($_POST['jeton_csrf']);
     //     die('Erreur: Jeton CSRF invalide');
     // } else {
         // On récupère les infos du formulaire en hashant avec bCrypt le mot de passe
@@ -40,25 +67,4 @@ if (!empty($_POST)) {
         }
     }
 }
-
 ?>
-
-<!-- Partie Affichage -->
-<body>
-    <form action="" method="post" class="Formulaire">
-        <input type="hidden" name="jeton_csrf" value="<?= $jeton_csrf ?>">
-        <h1 class="Formulaire_h1">Se connecter</h1>
-        <div class="Champ_de_saisie" id="Cds_utilisateur">
-            <p class="Champ_de_saisie_titre">Nom d'utilisateur</p>
-            <input type="text" name="Utilisateur" class="Champ_de_saisie_input" required>
-        </div>
-        <div class="Champ_de_saisie" id="Cds_mdp">
-            <p class="Champ_de_saisie_titre">Mot de passe</p>
-            <input type="password" name="Mdp" class="Champ_de_saisie_input" required>
-        </div>
-        <div class="Valider">
-            <input type="submit" value="Se connecter" class="Valider_bouton">
-        </div>
-        <a href="./creation.php" class="Formulaire_a">Vous n'avez pas de compte ?</a>
-    </form>
-</body>

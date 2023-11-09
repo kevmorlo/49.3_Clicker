@@ -1,5 +1,8 @@
 <?php
-include './base.php';
+// On inclue les dépendances
+require './base.php';
+
+// ----==== Partie Affichage ====----
 ?>
 
 <body>
@@ -95,5 +98,11 @@ include './base.php';
   notreProjet.onclick = () => {
     bonus.achatNotreProjet();
   }
-
 </script> 
+
+<?php 
+// ----==== Partie logique ====----
+
+// Gestion de la sauvegarde
+$sth = $dbh->prepare("INSERT INTO `parties` VALUES(score, multiplicateurs, autoclickers) WHERE id = :id_partie;");
+$sth->execute([':id_partie' => $_SESSION['id_partie']]);
