@@ -29,7 +29,7 @@ L'application prend en charge tous les supports et la plupart des résolutions.
 ### Prérequis
 
 Afin d'installer le projet correctement, vous aurez besoin : 
-- De [MySQL](https://www.mysql.com/fr/downloads/) ou [MariaDB](https://mariadb.org/download)
+- De [MySQL](https://www.mysql.com/fr/downloads/)
 - De [PHP](https://www.php.net/downloads)
 - D'[Apache](https://httpd.apache.org/download.cgi)
 - De [Composer](https://getcomposer.org/download)

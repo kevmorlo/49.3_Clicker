@@ -103,6 +103,22 @@ require './base.php';
 <?php 
 // ----==== Partie logique ====----
 
+// On récupère les infos de la partie
+if (!empty($_POST)) {
+  $score = $_POST['score'];
+  $multiplicateurs = $_POST['multiplicateurs'];
+  $autoclickers = $_POST['autoclickers'];
+} else {
+  $score = $_SESSION['score'];
+  $multiplicateurs = $_SESSION['multiplicateurs'];
+  $autoclickers = $_SESSION['autoclickers'];
+}
+
 // Gestion de la sauvegarde
-$sth = $dbh->prepare("INSERT INTO `parties` VALUES(score, multiplicateurs, autoclickers) WHERE id = :id_partie;");
-$sth->execute([':id_partie' => $_SESSION['id_partie']]);
+$sth = $dbh->prepare("UPDATE `parties` SET score = :score, multiplicateurs = :multiplicateurs, autoclickers = :autoclickers WHERE id = :id_partie;");
+$sth->execute([
+  'score' => $score, 
+  'multiplicateurs' => $multiplicateurs, 
+  'autoclickers' => $autoclickers, 
+  'id_partie' => $_SESSION['id_partie']
+]);

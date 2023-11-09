@@ -236,3 +236,27 @@ class Redirections {
         }
     }
 }
+
+class Sauvegarde {
+    constructor() {
+        // Toutes les minutes, on envoie les données à clicker.php qui va les envoyer à la base de données
+        setInterval(() => {
+            fetch('../../pages/clicker.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams({
+                    'multiplicateurs': Bonus.multiplicateurs,
+                    'autoclickers': Bonus.autoclickers,
+                    'clics': Bonus.clics
+                })
+            })
+            .then(response => response.text())
+            .then(data => console.log(data))
+            .catch((error) => {
+                console.error('Erreur:', error);
+            });
+        }, 60000);
+    }
+}
